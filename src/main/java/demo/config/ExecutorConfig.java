@@ -17,12 +17,11 @@ import java.util.concurrent.ThreadPoolExecutor;
 public class ExecutorConfig {
 
     @Resource
-    VisiableThreadPoolTaskExecutor visiableThreadPoolTaskExecutor;
+    private ThreadPoolTaskExecutor executor;
 
     @Bean
     public Executor asyncServiceExecutor() {
         log.info("start asyncServiceExecutor");
-        ThreadPoolTaskExecutor executor = visiableThreadPoolTaskExecutor;
         //配置核心线程数
         executor.setCorePoolSize(5);
         //配置最大线程数
